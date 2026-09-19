@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مكتب ضبعة العقاري - عقارات للبيع والإيجار في جميع محافظات الأردن">
+  <title>مكتب ضبعة العقاري | عقارات للبيع والإيجار في الأردن</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0b1f3a;
+      --navy-2: #12345a;
+      --gold: #d9a441;
+      --green: #1f8a70;
+      --green-dark: #176e5a;
+      --phone-green: #22a66a;
+      --phone-green-dark: #168453;
+      --red: #d95656;
+      --bg: #f4f6f8;
+      --surface: #ffffff;
+      --text: #172033;
+      --muted: #6d7685;
+      --border: #e7ebf0;
+      --shadow: 0 12px 35px rgba(16, 32, 55, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Cairo", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(217, 164, 65, 0.10), transparent 27%),
+        var(--bg);
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: #dce6f3;
+      font-size: 12px;
+    }
+
+    .topbar-content {
+      width: min(1180px, calc(100% - 32px));
+      min-height: 38px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .topbar-right,
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    header {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background:
+        linear-gradient(120deg, rgba(5, 19, 37, 0.98), rgba(18, 52, 90, 0.92)),
+        var(--navy);
+    }
+
+    header::before,
+    header::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      background: rgba(217, 164, 65, 0.12);
+    }
+
+    header::before {
+      width: 360px;
+      height: 360px;
+      top: -220px;
+      left: -80px;
+    }
+
+    header::after {
+      width: 260px;
+      height: 260px;
+      bottom: -180px;
+      right: 8%;
+    }
+
+    .navbar {
+      position: relative;
+      z-index: 2;
+      width: min(1180px, calc(100% - 32px));
+      min-height: 76px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 45px;
+      height: 45px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      background: var(--gold);
+      font-size: 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .brand-title {
+      display: block;
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 1px;
+      color: #c9d5e6;
+      font-size: 11px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-link {
+      padding: 9px 12px;
+      border-radius: 9px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-button {
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 15px;
+      color: var(--navy);
+      background: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .nav-button:hover {
+      transform: translateY(-2px);
+      background: #ecc264;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      width: min(1180px, calc(100% - 32px));
+      min-height: 315px;
+      margin: auto;
+      padding: 38px 0 60px;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      width: fit-content;
+      padding: 7px 11px;
+      border: 1px solid rgba(217, 164, 65, 0.4);
+      border-radius: 30px;
+      color: #f8d98e;
+      background: rgba(217, 164, 65, 0.12);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      max-width: 700px;
+      margin: 14px 0 10px;
+      font-size: clamp(26px, 4vw, 42px);
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    .hero p {
+      max-width: 630px;
+      margin: 0;
+      color: #d2ddeb;
+      font-size: 15px;
+      line-height: 2;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 23px;
+    }
+
+    .hero-primary,
+    .hero-secondary {
+      min-height: 44px;
+      padding: 0 17px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+      transition: 0.2s ease;
+    }
+
+    .hero-primary {
+      color: var(--navy);
+      background: var(--gold);
+    }
+
+    .hero-primary:hover {
+      transform: translateY(-2px);
+      background: #ecc264;
+    }
+
+    .hero-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-secondary:hover {
+      background: rgba(255, 255, 255, 0.13);
+    }
+
+    .hero-panel {
+      padding: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero-panel-label {
+      margin-bottom: 13px;
+      color: #d6e1ef;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .hero-search {
+      display: flex;
+      gap: 8px;
+    }
+
+    .hero-search input {
+      width: 100%;
+      height: 47px;
+      border: 0;
+      outline: 0;
+      border-radius: 10px;
+      padding: 0 13px;
+      color: var(--text);
+      background: #fff;
+      font-size: 13px;
+    }
+
+    .hero-search button {
+      min-width: 92px;
+      border: 0;
+      border-radius: 10px;
+      color: #fff;
+      background: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .hero-search button:hover {
+      background: var(--green-dark);
+    }
+
+    .hero-location-note {
+      margin: 13px 0 0;
+      color: #d4dfeb;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    main {
+      position: relative;
+      z-index: 3;
+      width: min(1180px, calc(100% - 32px));
+      margin: -28px auto 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .stat-card {
+      min-height: 105px;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .stat-icon {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: #edf4fb;
+      font-size: 20px;
+    }
+
+    .stat-card:nth-child(2) .stat-icon {
+      background: #eef8f5;
+    }
+
+    .stat-card:nth-child(3) .stat-icon {
+      background: #fff7e6;
+    }
+
+    .stat-card:nth-child(4) .stat-icon {
+      background: #fff0ef;
+    }
+
+    .stat-value {
+      display: block;
+      margin-bottom: 1px;
+      color: var(--navy);
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .section {
+      margin-top: 34px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 16px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .section-heading p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .results-count {
+      padding: 7px 11px;
+      border-radius: 30px;
+      color: var(--navy);
+      background: #eaf0f7;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .filter-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px;
+      margin-bottom: 17px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: var(--surface);
+      box-shadow: 0 5px 17px rgba(20, 42, 70, 0.04);
+    }
+
+    .filter-icon {
+      font-size: 19px;
+    }
+
+    .filter-box input {
+      width: 100%;
+      border: 0;
+      outline: none;
+      color: var(--text);
+      background: transparent;
+      font-size: 13px;
+    }
+
+    .filter-box input::placeholder {
+      color: #9ba5b3;
+    }
+
+    .listings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .property-card {
+      min-height: 350px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      background: var(--surface);
+      box-shadow: 0 7px 23px rgba(20, 42, 70, 0.05);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .property-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 34px rgba(20, 42, 70, 0.12);
+    }
+
+    .property-visual {
+      height: 88px;
+      padding: 15px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(10, 31, 58, 0.92), rgba(28, 101, 112, 0.78)),
+        var(--navy);
+    }
+
+    .property-type {
+      padding: 5px 9px;
+      border: 1px solid rgba(217, 164, 65, 0.35);
+      border-radius: 20px;
+      color: #f7d486;
+      background: rgba(217, 164, 65, 0.18);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .property-id {
+      opacity: 0.85;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .property-body {
+      flex: 1;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .property-title {
+      margin: 0;
+      color: var(--navy);
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .property-location {
+      margin: 5px 0 13px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .property-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding: 11px;
+      border-radius: 11px;
+      background: #f7f9fb;
+    }
+
+    .info-item {
+      color: #586475;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .info-item strong {
+      display: block;
+      color: var(--navy);
+      font-size: 12px;
+    }
+
+    .property-notes {
+      display: -webkit-box;
+      min-height: 40px;
+      overflow: hidden;
+      margin: 12px 0;
+      color: #687384;
+      font-size: 11px;
+      line-height: 1.9;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .property-notes.empty {
+      opacity: 0;
+    }
+
+    .property-footer {
+      margin-top: auto;
+      padding-top: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+      border-top: 1px solid var(--border);
+    }
+
+    .property-footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .price-tag {
+      max-width: 170px;
+      color: var(--green-dark);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.7;
+    }
+
+    .price-tag small {
+      display: block;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    .property-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .icon-action {
+      min-width: 31px;
+      height: 31px;
+      padding: 0 8px;
+      display: inline-grid;
+      place-items: center;
+      border: 0;
+      border-radius: 8px;
+      color: #fff;
+      background: var(--navy);
+      text-decoration: none;
+      font-size: 12px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .icon-action:hover {
+      transform: translateY(-1px);
+      opacity: 0.9;
+    }
+
+    .phone-number {
+      min-height: 36px;
+      width: 100%;
+      padding: 0 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      border-radius: 9px;
+      color: #ffffff;
+      background: var(--phone-green);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 800;
+      direction: ltr;
+      unicode-bidi: plaintext;
+      transition: 0.2s ease;
+    }
+
+    .phone-number:hover {
+      background: var(--phone-green-dark);
+      transform: translateY(-1px);
+    }
+
+    .delete-listing-btn {
+      min-height: 31px;
+      border: 0;
+      border-radius: 8px;
+      padding: 6px 9px;
+      color: #fff;
+      background: var(--red);
+      font-family: inherit;
+      font-size: 9px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .delete-listing-btn:hover {
+      transform: translateY(-1px);
+      background: #b93d3d;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      padding: 44px 20px;
+      border: 1px dashed #c8d1dc;
+      border-radius: 16px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.65);
+      text-align: center;
+    }
+
+    .empty-state strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--navy);
+      font-size: 16px;
+    }
+
+    .workspace-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .panel {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .panel-head {
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .panel-head h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .panel-head span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .panel-body {
+      padding: 18px;
+    }
+
+    .map-search-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .map-search-row input {
+      width: 100%;
+      height: 43px;
+      border: 1px solid #dfe5ec;
+      border-radius: 9px;
+      outline: none;
+      padding: 0 12px;
+      color: var(--text);
+      font-size: 12px;
+    }
+
+    .map-search-row input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(217, 164, 65, 0.14);
+    }
+
+    .map-search-row button {
+      min-width: 82px;
+      border: 0;
+      border-radius: 9px;
+      color: #fff;
+      background: var(--navy);
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .map-search-row button:hover {
+      background: var(--navy-2);
+    }
+
+    .map-frame-container {
+      width: 100%;
+      height: 290px;
+      overflow: hidden;
+      border: 1px solid #e0e6ec;
+      border-radius: 12px;
+      background: #eef2f5;
+    }
+
+    .map-frame-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .map-status {
+      margin: 10px 0 0;
+      padding: 9px 11px;
+      border-right: 3px solid var(--gold);
+      border-radius: 7px;
+      color: #5c6979;
+      background: #fffaee;
+      font-size: 11px;
+      line-height: 1.9;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .input-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .input-group label {
+      color: #4c596b;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .input-group input,
+    .input-group textarea,
+    .input-group select {
+      width: 100%;
+      border: 1px solid #dfe5ec;
+      border-radius: 9px;
+      outline: none;
+      padding: 10px 11px;
+      color: var(--text);
+      background: #fff;
+      font-size: 12px;
+      transition: 0.2s ease;
+    }
+
+    .input-group input,
+    .input-group select {
+      height: 42px;
+    }
+
+    .input-group textarea {
+      min-height: 78px;
+      resize: vertical;
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus,
+    .input-group select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(217, 164, 65, 0.14);
+    }
+
+    .conditional-fields {
+      display: none;
+      grid-column: 1 / -1;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding: 12px;
+      border: 1px dashed #cfd8e3;
+      border-radius: 11px;
+      background: #fafcff;
+    }
+
+    .conditional-fields.show {
+      display: grid;
+    }
+
+    .conditional-title {
+      grid-column: 1 / -1;
+      margin-bottom: -2px;
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .submit-button {
+      width: 100%;
+      min-height: 46px;
+      margin-top: 13px;
+      border: 0;
+      border-radius: 10px;
+      color: #fff;
+      background: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .submit-button:hover {
+      transform: translateY(-2px);
+      background: var(--green-dark);
+    }
+
+    .notice {
+      margin-top: 11px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    footer {
+      width: min(1180px, calc(100% - 32px));
+      margin: 45px auto 0;
+      padding: 20px 0 28px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      font-size: 11px;
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-bottom: 70px;
+      }
+
+      .hero-panel {
+        max-width: 650px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .listings-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .workspace-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .topbar-content {
+        justify-content: center;
+      }
+
+      .topbar-left {
+        display: none;
+      }
+
+      .navbar {
+        min-height: 68px;
+      }
+
+      .nav-link {
+        display: none;
+      }
+
+      .brand-title {
+        font-size: 14px;
+      }
+
+      .brand-subtitle {
+        font-size: 10px;
+      }
+
+      .nav-button {
+        padding: 9px 10px;
+        font-size: 11px;
+      }
+
+      .hero {
+        padding-top: 25px;
+      }
+
+      .hero h1 {
+        font-size: 25px;
+      }
+
+      .hero p {
+        font-size: 13px;
+      }
+
+      .hero-search {
+        flex-direction: column;
+      }
+
+      .hero-search button {
+        min-height: 43px;
+      }
+
+      .stats-grid,
+      .listings-grid,
+      .form-grid,
+      .conditional-fields {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .map-search-row {
+        flex-direction: column;
+      }
+
+      .map-search-row button {
+        min-height: 41px;
+      }
+
+      .property-card {
+        min-height: 290px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-content">
+      <div class="topbar-right">
+        <span>🇯🇴 جميع محافظات المملكة الأردنية الهاشمية</span>
+        <span>•</span>
+        <span>عقارات للبيع والإيجار</span>
+      </div>
+
+      <div class="topbar-left">
+        <span id="todayDate"></span>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <nav class="navbar">
+      <a class="brand" href="#">
+        <span class="brand-mark">⌂</span>
+        <span>
+          <span class="brand-title">مكتب ضبعة العقاري</span>
+          <span class="brand-subtitle">عقارات للبيع والإيجار في جميع محافظات الأردن</span>
+        </span>
+      </a>
+
+      <div class="nav-actions">
+        <a class="nav-link" href="#properties">العقارات</a>
+        <a class="nav-link" href="#management">إضافة إعلان</a>
+
+        <button
+          class="nav-button"
+          type="button"
+          onclick="document.getElementById('management').scrollIntoView({behavior: 'smooth'})">
+          + أضف عقارًا
+        </button>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div>
+        <span class="hero-badge">✦ منصة عقارية شاملة</span>
+
+        <h1>اعثر على العقار المناسب لك في جميع محافظات المملكة</h1>
+
+        <p>
+          تصفّح الأراضي والبيوت والشقق والفلل والمحلات والمكاتب المعروضة للبيع أو الإيجار،
+          وابحث حسب المحافظة أو المنطقة أو نوع العقار، ثم تواصل مباشرةً مع المعلن.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#properties" class="hero-primary">تصفح العقارات ↓</a>
+          <a href="#management" class="hero-secondary">أضف إعلانًا جديدًا</a>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <div class="hero-panel-label">🔎 ابحث عن موقع داخل الأردن</div>
+
+        <div class="hero-search">
+          <input
+            id="map-search-input"
+            type="text"
+            placeholder="ابحث داخل الأردن: عمّان، إربد، الزرقاء، العقبة...">
+
+          <button type="button" onclick="searchGoogleMap()">بحث</button>
+        </div>
+
+        <p class="hero-location-note">
+          ابحث باسم المحافظة أو المنطقة داخل الأردن لتحديث الخريطة.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">🏠</div>
+        <div>
+          <span class="stat-value" id="totalProperties">0</span>
+          <span class="stat-label">إجمالي الإعلانات</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">📍</div>
+        <div>
+          <span class="stat-value" id="totalGovernorates">0</span>
+          <span class="stat-label">محافظات مسجلة</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">🔎</div>
+        <div>
+          <span class="stat-value" id="visibleProperties">0</span>
+          <span class="stat-label">نتائج معروضة الآن</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">🗺️</div>
+        <div>
+          <span class="stat-value">الأردن</span>
+          <span class="stat-label">خريطة Google بالعربية</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="properties" class="section">
+      <div class="section-heading">
+        <div>
+          <h2>العقارات المعروضة</h2>
+          <p>ابحث حسب المحافظة أو المنطقة أو نوع العقار أو البيع والإيجار.</p>
+        </div>
+
+        <span class="results-count" id="resultsCount">عدد النتائج: 0</span>
+      </div>
+
+      <div class="filter-box">
+        <span class="filter-icon">🔍</span>
+
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="ابحث بالمحافظة، المنطقة، نوع العقار، رقم القطعة أو السعر...">
+      </div>
+
+      <div class="listings-grid" id="listingsContainer"></div>
+    </section>
+
+    <section id="management" class="section">
+      <div class="section-heading">
+        <div>
+          <h2>إدارة الإعلانات</h2>
+          <p>ابحث عن الموقع داخل الأردن، ثم أضف بيانات العقار.</p>
+        </div>
+      </div>
+
+      <div class="workspace-grid">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>🗺️ خريطة الأردن</h3>
+            <span>Google Maps بالعربية</span>
+          </div>
+
+          <div class="panel-body">
+            <div class="map-search-row">
+              <input
+                id="map-search-input-2"
+                type="text"
+                placeholder="ابحث عن محافظة أو منطقة داخل الأردن">
+
+              <button type="button" onclick="searchGoogleMapFromPanel()">بحث</button>
+            </div>
+
+            <div class="map-frame-container">
+              <iframe
+                id="googleMapFrame"
+                src="https://maps.google.com/maps?q=%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86&z=9&hl=ar&output=embed"
+                allowfullscreen
+                loading="lazy">
+              </iframe>
+            </div>
+
+            <p class="map-status" id="mapMessages">
+              الخريطة تبدأ على الأردن. ابحث باسم المحافظة أو المنطقة داخل الأردن لتحديث الموقع.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h3>➕ إضافة إعلان عقاري</h3>
+            <span>الحقول المعلّمة مطلوبة</span>
+          </div>
+
+          <div class="panel-body">
+            <form id="addPropertyForm">
+              <div class="form-grid">
+                <div class="input-group">
+                  <label for="propertyType">نوع العقار</label>
+
+                  <select id="propertyType" required>
+                    <option value="">اختر نوع العقار</option>
+                    <option value="أرض">أرض</option>
+                    <option value="بيت">بيت</option>
+                    <option value="شقة">شقة</option>
+                    <option value="فيلا">فيلا</option>
+                    <option value="محل تجاري">محل تجاري</option>
+                    <option value="مكتب">مكتب</option>
+                    <option value="مزرعة">مزرعة</option>
+                    <option value="استراحة">استراحة</option>
+                    <option value="عقار آخر">عقار آخر</option>
+                  </select>
+                </div>
+
+                <div class="input-group">
+                  <label for="listingType">نوع الإعلان</label>
+
+                  <select id="listingType" required>
+                    <option value="">اختر: بيع أو إيجار</option>
+                    <option value="للبيع">للبيع</option>
+                    <option value="للإيجار">للإيجار</option>
+                  </select>
+                </div>
+
+                <div class="input-group">
+                  <label for="governorate">المحافظة</label>
+                  <input type="text" id="governorate" placeholder="مثال: العاصمة" required>
+                </div>
+
+                <div class="input-group">
+                  <label for="areaName">المنطقة / الحي</label>
+                  <input type="text" id="areaName" placeholder="مثال: مرج الحمام" required>
+                </div>
+
+                <div class="input-group">
+                  <label for="propertyArea">المساحة</label>
+                  <input type="text" id="propertyArea" placeholder="مثال: 180 م² أو 5 دونمات" required>
+                </div>
+
+                <div class="input-group">
+                  <label for="price">السعر بالدينار الأردني</label>
+                  <input
+                    type="number"
+                    id="price"
+                    min="0"
+                    step="1"
+                    placeholder="مثال: 5000"
+                    required>
+                </div>
+
+                <div class="input-group">
+                  <label for="priceType">طريقة السعر</label>
+
+                  <select id="priceType" required>
+                    <option value="">اختر طريقة السعر</option>
+                    <option value="السعر كامل">السعر كامل</option>
+                    <option value="للدونم">للدونم</option>
+                    <option value="للمتر المربع">للمتر المربع</option>
+                    <option value="شهريًا">شهريًا</option>
+                    <option value="سنويًا">سنويًا</option>
+                    <option value="يوميًا">يوميًا</option>
+                    <option value="قابل للتفاوض">قابل للتفاوض</option>
+                  </select>
+                </div>
+
+                <div class="input-group">
+                  <label for="phone">رقم التواصل</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    dir="ltr"
+                    placeholder="0791234567"
+                    required>
+                </div>
+
+                <div class="input-group full">
+                  <label for="location">رابط الموقع أو الإحداثيات</label>
+                  <input type="text" id="location" placeholder="رابط Google Maps أو 31.95, 35.91">
+                </div>
+
+                <div id="landFields" class="conditional-fields">
+                  <div class="conditional-title">بيانات إضافية للأرض</div>
+
+                  <div class="input-group">
+                    <label for="basin">الحوض</label>
+                    <input type="text" id="basin" placeholder="مثال: حوض 4 - المرقب">
+                  </div>
+
+                  <div class="input-group">
+                    <label for="parcel">رقم القطعة</label>
+                    <input type="text" id="parcel" placeholder="مثال: 142">
+                  </div>
+                </div>
+
+                <div id="buildingFields" class="conditional-fields">
+                  <div class="conditional-title">بيانات إضافية للعقار السكني</div>
+
+                  <div class="input-group">
+                    <label for="bedrooms">غرف النوم</label>
+                    <input type="number" id="bedrooms" min="0" placeholder="مثال: 3">
+                  </div>
+
+                  <div class="input-group">
+                    <label for="bathrooms">الحمامات</label>
+                    <input type="number" id="bathrooms" min="0" placeholder="مثال: 2">
+                  </div>
+                </div>
+
+                <div class="input-group full">
+                  <label for="notes">وصف العقار ومواصفاته</label>
+
+                  <textarea
+                    id="notes"
+                    placeholder="اكتب تفاصيل العقار ومميزاته، مثل حالة التشطيب أو قربه من الخدمات..."></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="submit-button">
+                نشر الإعلان في قائمة العقارات
+              </button>
+
+              <div class="notice">
+                يتم حفظ الإعلانات داخل متصفحك الحالي فقط باستخدام Local Storage.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> مكتب ضبعة العقاري الإلكتروني للتجارة — جميع الحقوق محفوظة
+  </footer>
+
+  <script>
+    const STORAGE_KEY = "dabaa_real_estate_listings_v5";
+    let properties = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+    const listingsContainer = document.getElementById("listingsContainer");
+    const addPropertyForm = document.getElementById("addPropertyForm");
+    const searchInput = document.getElementById("searchInput");
+    const resultsCount = document.getElementById("resultsCount");
+    const propertyTypeSelect = document.getElementById("propertyType");
+    const landFields = document.getElementById("landFields");
+    const buildingFields = document.getElementById("buildingFields");
+
+    function escapeHTML(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function normalizePhone(value) {
+      return String(value || "").replace(/[^\d+]/g, "");
+    }
+
+    function formatPrice(value) {
+      const numericValue = Number(String(value || "").replace(/[^\d.]/g, ""));
+
+      if (!Number.isFinite(numericValue) || numericValue <= 0) {
+        return "";
+      }
+
+      return numericValue.toLocaleString("en-US");
+    }
+
+    function getPropertyIcon(type) {
+      const icons = {
+        "أرض": "🏞️",
+        "بيت": "🏠",
+        "شقة": "🏢",
+        "فيلا": "🏘️",
+        "محل تجاري": "🏪",
+        "مكتب": "💼",
+        "مزرعة": "🌿",
+        "استراحة": "🌴",
+        "عقار آخر": "🏡"
+      };
+
+      return icons[type] || "🏠";
+    }
+
+    function isResidential(type) {
+      return ["بيت", "شقة", "فيلا"].includes(type);
+    }
+
+    function toggleConditionalFields() {
+      const type = propertyTypeSelect.value;
+
+      landFields.classList.toggle("show", type === "أرض");
+      buildingFields.classList.toggle("show", isResidential(type));
+
+      document.getElementById("basin").required = type === "أرض";
+      document.getElementById("parcel").required = type === "أرض";
+    }
+
+    function updateStats(visibleCount = properties.length) {
+      const governorates = new Set(
+        properties
+          .map(item => (item.governorate || "").trim().toLowerCase())
+          .filter(Boolean)
+      );
+
+      document.getElementById("totalProperties").textContent = properties.length;
+      document.getElementById("totalGovernorates").textContent = governorates.size;
+      document.getElementById("visibleProperties").textContent = visibleCount;
+    }
+
+    function addJordanToQuery(rawQuery) {
+      const query = String(rawQuery || "").trim();
+
+      if (!query) {
+        return "";
+      }
+
+      const jordanWords = ["الأردن", "الاردن", "Jordan", "jordan"];
+
+      const alreadyIncludesJordan = jordanWords.some(word =>
+        query.toLowerCase().includes(word.toLowerCase())
+      );
+
+      return alreadyIncludesJordan ? query : `${query}، الأردن`;
+    }
+
+    function searchGoogleMap(queryFromInput = "") {
+      const input = document.getElementById("map-search-input");
+      const rawQuery = (queryFromInput || input.value).trim();
+
+      if (!rawQuery) {
+        document.getElementById("mapMessages").textContent =
+          "اكتب اسم محافظة أو منطقة داخل الأردن أولًا.";
+        return;
+      }
+
+      const query = addJordanToQuery(rawQuery);
+
+      document.getElementById("googleMapFrame").src =
+        `https://maps.google.com/maps?q=${encodeURIComponent(query)}&z=14&hl=ar&output=embed`;
+
+      document.getElementById("map-search-input").value = rawQuery;
+      document.getElementById("map-search-input-2").value = rawQuery;
+
+      document.getElementById("mapMessages").textContent =
+        `تم تحديث الخريطة إلى: ${query}`;
+    }
+
+    function searchGoogleMapFromPanel() {
+      const query = document.getElementById("map-search-input-2").value.trim();
+      searchGoogleMap(query);
+    }
+
+    function getMapLink(location) {
+      const value = String(location || "").trim();
+
+      if (!value) {
+        return "";
+      }
+
+      if (/^https?:\/\//i.test(value)) {
+        return value;
+      }
+
+      return `https://maps.google.com/?q=${encodeURIComponent(addJordanToQuery(value))}&hl=ar`;
+    }
+
+    function renderListings(filterText = "") {
+      const query = filterText.trim().toLowerCase();
+
+      const filtered = properties.filter(item => {
+        const searchableText = [
+          item.propertyType,
+          item.listingType,
+          item.governorate,
+          item.areaName,
+          item.propertyArea,
+          item.price,
+          item.priceType,
+          item.phone,
+          item.basin,
+          item.parcel,
+          item.bedrooms,
+          item.bathrooms,
+          item.notes
+        ].join(" ").toLowerCase();
+
+        return searchableText.includes(query);
+      });
+
+      resultsCount.textContent = `عدد النتائج: ${filtered.length}`;
+      updateStats(filtered.length);
+      listingsContainer.innerHTML = "";
+
+      if (filtered.length === 0) {
+        listingsContainer.innerHTML = `
+          <div class="empty-state">
+            <strong>لا توجد إعلانات مطابقة حاليًا</strong>
+            أضف إعلانًا عقاريًا جديدًا من قسم إدارة الإعلانات في الأسفل.
+          </div>
+        `;
+        return;
+      }
+
+      filtered.slice().reverse().forEach(row => {
+        const propertyType = escapeHTML(row.propertyType || "عقار");
+        const listingType = escapeHTML(row.listingType || "");
+        const governorate = escapeHTML(row.governorate || "غير محدد");
+        const areaName = escapeHTML(row.areaName || "غير محدد");
+        const propertyArea = escapeHTML(row.propertyArea || "غير محدد");
+        const basin = escapeHTML(row.basin || "");
+        const parcel = escapeHTML(row.parcel || "");
+        const bedrooms = escapeHTML(row.bedrooms || "");
+        const bathrooms = escapeHTML(row.bathrooms || "");
+        const notes = escapeHTML(row.notes || "");
+        const propertyDate = escapeHTML(row.date || "غير محدد");
+        const priceType = escapeHTML(row.priceType || "السعر كامل");
+        const formattedPrice = formatPrice(row.price);
+        const safePhone = normalizePhone(row.phone);
+        const mapLink = getMapLink(row.location);
+
+        const title = `${propertyType} ${listingType} في ${areaName}`;
+
+        let extraInfo = `
+          <div class="info-item">
+            <strong>نوع الإعلان</strong>
+            ${listingType || "غير محدد"}
+          </div>
+          <div class="info-item">
+            <strong>تاريخ الإضافة</strong>
+            ${propertyDate}
+          </div>
+        `;
+
+        if (row.propertyType === "أرض") {
+          extraInfo = `
+            <div class="info-item">
+              <strong>الحوض</strong>
+              ${basin || "غير محدد"}
+            </div>
+            <div class="info-item">
+              <strong>رقم القطعة</strong>
+              ${parcel || "غير محدد"}
+            </div>
+          `;
+        }
+
+        if (isResidential(row.propertyType)) {
+          extraInfo = `
+            <div class="info-item">
+              <strong>غرف النوم</strong>
+              ${bedrooms || "غير محدد"}
+            </div>
+            <div class="info-item">
+              <strong>الحمامات</strong>
+              ${bathrooms || "غير محدد"}
+            </div>
+          `;
+        }
+
+        const card = document.createElement("article");
+        card.className = "property-card";
+
+        card.innerHTML = `
+          <div class="property-visual">
+            <span class="property-type">${getPropertyIcon(row.propertyType)} ${propertyType} ${listingType}</span>
+            <span class="property-id">${governorate}</span>
+          </div>
+
+          <div class="property-body">
+            <h3 class="property-title">${title}</h3>
+
+            <p class="property-location">
+              📍 ${governorate} — ${areaName}
+            </p>
+
+            <div class="property-info">
+              <div class="info-item">
+                <strong>المساحة</strong>
+                ${propertyArea}
+              </div>
+
+              <div class="info-item">
+                <strong>تاريخ الإضافة</strong>
+                ${propertyDate}
+              </div>
+
+              ${extraInfo}
+            </div>
+
+            <p class="property-notes ${notes ? "" : "empty"}">
+              ${notes || "لا توجد مواصفات إضافية"}
+            </p>
+
+            <div class="property-footer">
+              <div class="property-footer-top">
+                <div class="price-tag">
+                  ${formattedPrice ? `<span dir="ltr">${formattedPrice}</span> دينار أردني` : "السعر عند التواصل"}
+                  <small>${formattedPrice ? priceType : (listingType || "إعلان عقاري")}</small>
+                </div>
+
+                <div class="property-actions">
+                  ${mapLink ? `
+                    <a
+                      class="icon-action"
+                      href="${escapeHTML(mapLink)}"
+                      target="_blank"
+                      rel="noopener"
+                      title="فتح الموقع في خرائط Google">
+                      📍
+                    </a>
+                  ` : ""}
+
+                  <button
+                    class="delete-listing-btn"
+                    type="button"
+                    onclick="deleteProperty(${Number(row.id)})">
+                    🗑️ تم البيع / حذف
+                  </button>
+                </div>
+              </div>
+
+              ${safePhone ? `
+                <a
+                  class="phone-number"
+                  href="tel:${safePhone}"
+                  title="اتصال على ${safePhone}">
+                  📞 <span dir="ltr">${safePhone}</span>
+                </a>
+              ` : ""}
+            </div>
+          </div>
+        `;
+
+        listingsContainer.appendChild(card);
+      });
+    }
+
+    addPropertyForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const newProperty = {
+        id: Date.now(),
+        propertyType: document.getElementById("propertyType").value,
+        listingType: document.getElementById("listingType").value,
+        governorate: document.getElementById("governorate").value.trim(),
+        areaName: document.getElementById("areaName").value.trim(),
+        propertyArea: document.getElementById("propertyArea").value.trim(),
+        price: document.getElementById("price").value.trim(),
+        priceType: document.getElementById("priceType").value,
+        phone: document.getElementById("phone").value.trim(),
+        location: document.getElementById("location").value.trim(),
+        basin: document.getElementById("basin").value.trim(),
+        parcel: document.getElementById("parcel").value.trim(),
+        bedrooms: document.getElementById("bedrooms").value.trim(),
+        bathrooms: document.getElementById("bathrooms").value.trim(),
+        notes: document.getElementById("notes").value.trim(),
+        date: new Date().toLocaleDateString("ar-JO")
+      };
+
+      properties.push(newProperty);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(properties));
+
+      addPropertyForm.reset();
+      toggleConditionalFields();
+
+      searchInput.value = "";
+      renderListings();
+
+      document.getElementById("properties").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+      alert("تم نشر الإعلان بنجاح في قائمة العقارات.");
+    });
+
+    window.deleteProperty = function (id) {
+      const confirmed = confirm(
+        "هل تم بيع أو تأجير هذا العقار؟\n\nاضغط موافق لحذف الإعلان نهائيًا من القائمة."
+      );
+
+      if (!confirmed) {
+        return;
+      }
+
+      properties = properties.filter(item => Number(item.id) !== Number(id));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(properties));
+
+      renderListings(searchInput.value);
+    };
+
+    propertyTypeSelect.addEventListener("change", toggleConditionalFields);
+
+    searchInput.addEventListener("input", function (event) {
+      renderListings(event.target.value);
+    });
+
+    document.getElementById("map-search-input").addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        searchGoogleMap();
+      }
+    });
+
+    document.getElementById("map-search-input-2").addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        searchGoogleMapFromPanel();
+      }
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("todayDate").textContent = new Date().toLocaleDateString("ar-JO", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+
+    toggleConditionalFields();
+    renderListings();
+  </script>
+</body>
+</html>
